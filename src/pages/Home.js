@@ -6,7 +6,7 @@ import { useSearchParams } from "react-router-dom";
 
 export default function Home(){
 const [products,setProducts]=useState([])
-const  [searchparams,setSearchparams]=useSearchParams()
+const  [searchparams]=useSearchParams()
 
 
 useEffect(()=>{

@@ -7,11 +7,11 @@ export default function Cart({cartItems,setCartItems}){
 const [complete,setComplete] =useState(false)
 
     function increaseQty(item) {
-        if (item.product.stock == item.qty) {
+        if (item.product.stock === item.qty) {
             return;
         }
       const updateditems=cartItems.map((i)=>{
-        if (i.product._id == item.product._id) {
+        if (i.product._id === item.product._id) {
             i.qty++
           
             
@@ -26,7 +26,7 @@ const [complete,setComplete] =useState(false)
           
        
         const updateditems=cartItems.map((i)=>{
-            if (i.product._id == item.product._id) {
+            if (i.product._id === item.product._id) {
                 i.qty--
               
                 
@@ -43,16 +43,21 @@ const [complete,setComplete] =useState(false)
 
 function removeItem(item) {
 
-     const updateditems=cartItems.filter((i)=>{
-            if (i.product._id !== item.product._id) {
-                
-              return true;
-                
-            }
-          
-          })
+    //  const updateditems =cartItems.filter((i)=>{
 
-          setCartItems(updateditems)
+    //     if (i.product._id !== item.product._id) {
+                
+    //           return true
+                
+    //         }
+          
+    //       })
+    const updatedItems = cartItems.filter((i) => {
+        // Return true if the IDs do not match, otherwise return false
+        return i.product._id !== item.product._id;
+      });
+      
+          setCartItems(updatedItems)
 
     }
     
@@ -79,7 +84,7 @@ function placeOrder() {
 
 
 
-    return  cartItems .length > 0 ?<Fragment>
+    return  cartItems.length > 0 ?<Fragment>
   <div className="container container-fluid">
     <h2 className="mt-5">Your Cart: <b>{cartItems.length} Items</b></h2>
     
