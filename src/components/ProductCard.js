@@ -6,7 +6,7 @@ export default function ProductCard({product}){
         <img
           className="card-img-top mx-auto"
           src={product.images[0].image}
-        />
+         alt='my image'/>
         <div className="card-body d-flex flex-column">
           <h5 className="card-title">
           <Link to={"/product/"+product._id}>{product.name}</Link>

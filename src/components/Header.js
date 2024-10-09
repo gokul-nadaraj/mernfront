@@ -10,7 +10,7 @@ export default function Headerp({cartItems}){
     <div className="col-12 col-md-3">
      
       <div className="navbar-brand">
-      <Link to="/"><img width="150px"  src="/images/logo.png" /></Link>
+      <Link to="/"><img width="150px"  src="/images/logo.png" alt="my logo" /></Link>
        
       </div>
     </div>
